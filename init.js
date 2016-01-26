@@ -1,3 +1,4 @@
+/*jshint browser:true */
 /*
  * Copyright (c) Codiad & Andr3as, distributed
  * as-is and without warranty under the MIT License.
@@ -38,6 +39,9 @@
             });
             amplify.subscribe('active.onClose', function(path){
                 _this.deactivateIcons(path);
+            });
+            amplify.subscribe('active.onRemoveAll', function(){
+                _this.deactivateIcons();
             });
             $('.icon_bar .icon:not(.disabled)').live('click',function(event){
                 var item = event.target;
